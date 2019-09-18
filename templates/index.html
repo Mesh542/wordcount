@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wordcount</title>
+    <meta name="description" content="This is a website about nothing">
+</head>
+<body>
+    <h1 style="text-align: center">Counting Words</h1>
+    <form action="{% url 'home' %}" style="text-align: center; margin-top: 50px">
+        <textarea cols="50" rows="5" name="text"></textarea>
+        <br>
+        <input type="submit" value="Count" style="margin-top: 30px" />
+    </form>
+    {% if count %}
+        <h2 style="margin-top: 30px; text-align: center">
+            There are {{ count }} words in your text "{{ text }}"
+        </h2>
+    {% endif %}
+    <a href="{% url 'contact' %}" style="margin-top: 30px; text-decoration: none; text-align: center">Contact Us</a>
+</body>
+</html>
